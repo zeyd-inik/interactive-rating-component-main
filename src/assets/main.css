@@ -6,13 +6,15 @@
     --very-dark-blue: hsl(216, 12%, 8%);
     --desktop: 1440px;
 }
+
 /* Custom Font */
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
 
-body {
+/* CSS Reset */
+* {
+    box-sizing: border-box;
     font-family: 'Overpass', sans-serif;
 }
-/* CSS Reset */
 
 html,
 body,
