@@ -1,14 +1,6 @@
-## Table of contents
-
--   [Overview](#overview)
-    -   [The App](#the-App)
-    -   [Screenshot](#screenshot)
-    -   [Links](#links)
--   [My process](#my-process)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
+
+-   Live Site URL: [Go to website](https://interactive-rating-component-main-dun-theta.vercel.app/)
 
 ### The App
 
@@ -21,10 +13,6 @@ Users should be able to:
 ### Screenshot
 
 ![](./src/assets/images/img1.png) ![](./src/assets/images/img2.png)
-
-### Links
-
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 
