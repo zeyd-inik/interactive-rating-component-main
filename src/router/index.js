@@ -9,6 +9,11 @@ const router = createRouter({
             name: 'home',
             component: HomeView,
         },
+        {
+            path: '/thank-you',
+            name: 'thankYouView',
+            component: () => import('../views/ThankYouView.vue'), // Lazy load the view
+        },
     ],
 });
 

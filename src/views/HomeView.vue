@@ -12,25 +12,31 @@
             <!-- create circles with v-for -->
             <div class="circles_container">
                 <div
-                    class="circle number"
-                    :class="{ circle_hover: selectedCircle === index }"
                     v-for="(num, index) in 5"
+                    class="circle number"
+                    :class="{ circle_hover: rateStore.rate === index }"
                     :key="index"
-                    @click="handleCircleClick(index)"
+                    @click="rateStore.setRate(index)"
                 >
                     {{ num }}
                 </div>
             </div>
-            <button class="btn">submit</button>
+            <button class="btn" @click="handleSubmit">submit</button>
         </div>
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-const selectedCircle = ref(null);
+import { useRateStore } from '../../stores/main.js';
+import { useRouter } from 'vue-router';
+const rateStore = useRateStore();
+const router = useRouter();
+
 const handleCircleClick = (idx) => {
-    selectedCircle.value = idx;
+    rateStore.rate = idx;
+};
+const handleSubmit = () => {
+    router.push({ name: 'thankYouView' });
 };
 </script>
 
@@ -89,7 +95,7 @@ const handleCircleClick = (idx) => {
     letter-spacing: 1.7px;
 }
 .btn:active {
-    transform: translateY(2px);
+    transform: scale(0.98);
     box-shadow: 0px -1px 0.1rem rgba(0, 0, 0, 0.1);
 }
 .btn:hover {
@@ -97,20 +103,7 @@ const handleCircleClick = (idx) => {
     transition: all 0.2s ease;
     color: var(--orange);
 }
-.title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    margin: 1rem 0;
-}
-.text {
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: var(--white);
-    line-height: 1.5;
-    transform: translateY(-20px);
-    margin-top: 1rem;
-}
+
 .circle img {
     width: 0.9rem;
     height: 0.9rem;
